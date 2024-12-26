@@ -112,7 +112,8 @@ class ViewController: UIViewController {
     
     func pressNumber (_ num:String) {
         inputNum += num
-        print("目前計算式：\(inputArray)\n")
+        nowMath = inputArray.joined() + inputNum
+        print("目前計算式：\(nowMath)\n")
         show.text = inputNum
     }
     
@@ -130,9 +131,6 @@ class ViewController: UIViewController {
     }
     
     func finalEqual() {
-        print("目前陣列內容：\(inputArray)")
-        
-        // 如果陣列為空或內容不足以計算，則不執行計算
         guard inputArray.count >= 3 else {
             show.text = "錯誤：輸入不足"
             inputArray = []
@@ -140,7 +138,6 @@ class ViewController: UIViewController {
             return
         }
         
-        // 初始化計算變數
         var result = 0.0
         var currentOperator = "+"
         
@@ -167,12 +164,10 @@ class ViewController: UIViewController {
                     break
                 }
             } else {
-                // 如果不是數字，則更新運算符
                 currentOperator = item
             }
         }
         
-        // 顯示結果並清空輸入
         show.text = "\(result)"
         inputArray = []
         inputNum = "\(result)"
