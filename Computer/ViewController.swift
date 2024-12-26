@@ -11,7 +11,6 @@ class ViewController: UIViewController {
         show.text = "0"
     }
     
-    
     @IBAction func clearAll(_ sender: Any) {
         print("按下AC")
         inputNum = ""
@@ -173,4 +172,3 @@ class ViewController: UIViewController {
         inputNum = "\(result)"
     }
 }
-
