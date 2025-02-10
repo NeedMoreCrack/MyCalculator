@@ -170,5 +170,6 @@ class ViewController: UIViewController {
         show.text = "\(result)"
         inputArray = []
         inputNum = "\(result)"
+        print("目前計算式：\(nowMath)=\(result)")
     }
 }
